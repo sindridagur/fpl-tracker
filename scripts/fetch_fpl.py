@@ -34,15 +34,19 @@ def main():
     m1_gws = {gw["event"]: gw for gw in m1_history["current"]}
     m2_gws = {gw["event"]: gw for gw in m2_history["current"]}
 
-    all_gws = sorted(set(list(m1_gws.keys()) + list(m2_gws.keys())))
+    # League started after GW1 â subtract GW1 points from all cumulative totals
+    m1_gw1 = m1_gws.get(1, {}).get("points", 0)
+    m2_gw1 = m2_gws.get(1, {}).get("points", 0)
+
+    all_gws = sorted(gw for gw in set(list(m1_gws.keys()) + list(m2_gws.keys())) if gw > 1)
 
     gameweeks = []
     for gw in all_gws:
         m1_data = m1_gws.get(gw, {})
         m2_data = m2_gws.get(gw, {})
 
-        m1_total = m1_data.get("total_points", 0)
-        m2_total = m2_data.get("total_points", 0)
+        m1_total = m1_data.get("total_points", 0) - m1_gw1
+        m2_total = m2_data.get("total_points", 0) - m2_gw1
 
         gameweeks.append({
             "gameweek": gw,
@@ -59,14 +63,14 @@ def main():
             "name": f"{m1_info.get('player_first_name', '')} {m1_info.get('player_last_name', '')}".strip(),
             "team_name": m1_info.get("name", "Manager 1"),
             "overall_rank": m1_info.get("summary_overall_rank"),
-            "total_points": m1_info.get("summary_overall_points"),
+            "total_points": (m1_info.get("summary_overall_points") or 0) - m1_gw1,
         },
         "manager2": {
             "id": MANAGER_2_ID,
             "name": f"{m2_info.get('player_first_name', '')} {m2_info.get('player_last_name', '')}".strip(),
             "team_name": m2_info.get("name", "Manager 2"),
             "overall_rank": m2_info.get("summary_overall_rank"),
-            "total_points": m2_info.get("summary_overall_points"),
+            "total_points": (m2_info.get("summary_overall_points") or 0) - m2_gw1,
         },
         "gameweeks": gameweeks,
         "last_updated": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
