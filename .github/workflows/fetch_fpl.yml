@@ -2,8 +2,8 @@ name: Fetch FPL Data
 
 on:
   schedule:
-    # Runs every Tuesday at 08:00 UTC (after Monday night games settle)
-    - cron: '0 8 * * 2'
+    # Runs daily at 08:00 UTC
+    - cron: '0 8 * * *'
   workflow_dispatch:
 
 jobs:
