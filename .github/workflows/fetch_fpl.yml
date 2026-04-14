@@ -1,0 +1,39 @@
+name: Fetch FPL Data
+
+on:
+  schedule:
+    # Runs every Tuesday at 08:00 UTC (after Monday night games settle)
+    - cron: '0 8 * * 2'
+  workflow_dispatch:
+
+jobs:
+  fetch-and-commit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch FPL data
+        env:
+          MANAGER_1_ID: ${{ vars.MANAGER_1_ID }}
+          MANAGER_2_ID: ${{ vars.MANAGER_2_ID }}
+        run: python scripts/fetch_fpl.py
+
+      - name: Commit updated data
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data/fpl_data.json
+          git diff --staged --quiet && echo "No changes to commit" || git commit -m "chore: update FPL data [skip ci]"
+          git push
