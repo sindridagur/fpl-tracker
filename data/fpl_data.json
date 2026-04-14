@@ -1,18 +1,275 @@
 {
   "manager1": {
     "id": "6819004",
-    "name": "",
-    "team_name": "Manager 1",
-    "overall_rank": null,
-    "total_points": 0
+    "name": "Sindri Sindrason",
+    "team_name": "zipzap",
+    "overall_rank": 404372,
+    "total_points": 1852
   },
   "manager2": {
     "id": "6839236",
-    "name": "",
-    "team_name": "Manager 2",
-    "overall_rank": null,
-    "total_points": 0
+    "name": "Helgi Hrafn Bergmann",
+    "team_name": "Boltagooners FC",
+    "overall_rank": 371200,
+    "total_points": 1856
   },
-  "gameweeks": [],
-  "last_updated": null
+  "gameweeks": [
+    {
+      "gameweek": 1,
+      "manager1_gw_points": 61,
+      "manager1_total": 61,
+      "manager2_gw_points": 58,
+      "manager2_total": 58,
+      "gap": 3
+    },
+    {
+      "gameweek": 2,
+      "manager1_gw_points": 63,
+      "manager1_total": 124,
+      "manager2_gw_points": 53,
+      "manager2_total": 107,
+      "gap": 17
+    },
+    {
+      "gameweek": 3,
+      "manager1_gw_points": 62,
+      "manager1_total": 186,
+      "manager2_gw_points": 59,
+      "manager2_total": 162,
+      "gap": 24
+    },
+    {
+      "gameweek": 4,
+      "manager1_gw_points": 91,
+      "manager1_total": 277,
+      "manager2_gw_points": 79,
+      "manager2_total": 241,
+      "gap": 36
+    },
+    {
+      "gameweek": 5,
+      "manager1_gw_points": 56,
+      "manager1_total": 333,
+      "manager2_gw_points": 53,
+      "manager2_total": 294,
+      "gap": 39
+    },
+    {
+      "gameweek": 6,
+      "manager1_gw_points": 73,
+      "manager1_total": 402,
+      "manager2_gw_points": 60,
+      "manager2_total": 354,
+      "gap": 48
+    },
+    {
+      "gameweek": 7,
+      "manager1_gw_points": 73,
+      "manager1_total": 475,
+      "manager2_gw_points": 69,
+      "manager2_total": 423,
+      "gap": 52
+    },
+    {
+      "gameweek": 8,
+      "manager1_gw_points": 64,
+      "manager1_total": 539,
+      "manager2_gw_points": 52,
+      "manager2_total": 475,
+      "gap": 64
+    },
+    {
+      "gameweek": 9,
+      "manager1_gw_points": 58,
+      "manager1_total": 597,
+      "manager2_gw_points": 66,
+      "manager2_total": 541,
+      "gap": 56
+    },
+    {
+      "gameweek": 10,
+      "manager1_gw_points": 77,
+      "manager1_total": 674,
+      "manager2_gw_points": 78,
+      "manager2_total": 619,
+      "gap": 55
+    },
+    {
+      "gameweek": 11,
+      "manager1_gw_points": 39,
+      "manager1_total": 713,
+      "manager2_gw_points": 31,
+      "manager2_total": 650,
+      "gap": 63
+    },
+    {
+      "gameweek": 12,
+      "manager1_gw_points": 26,
+      "manager1_total": 739,
+      "manager2_gw_points": 25,
+      "manager2_total": 675,
+      "gap": 64
+    },
+    {
+      "gameweek": 13,
+      "manager1_gw_points": 30,
+      "manager1_total": 769,
+      "manager2_gw_points": 31,
+      "manager2_total": 706,
+      "gap": 63
+    },
+    {
+      "gameweek": 14,
+      "manager1_gw_points": 71,
+      "manager1_total": 840,
+      "manager2_gw_points": 82,
+      "manager2_total": 788,
+      "gap": 52
+    },
+    {
+      "gameweek": 15,
+      "manager1_gw_points": 54,
+      "manager1_total": 894,
+      "manager2_gw_points": 45,
+      "manager2_total": 833,
+      "gap": 61
+    },
+    {
+      "gameweek": 16,
+      "manager1_gw_points": 56,
+      "manager1_total": 950,
+      "manager2_gw_points": 58,
+      "manager2_total": 891,
+      "gap": 59
+    },
+    {
+      "gameweek": 17,
+      "manager1_gw_points": 87,
+      "manager1_total": 1037,
+      "manager2_gw_points": 85,
+      "manager2_total": 976,
+      "gap": 61
+    },
+    {
+      "gameweek": 18,
+      "manager1_gw_points": 27,
+      "manager1_total": 1064,
+      "manager2_gw_points": 42,
+      "manager2_total": 1018,
+      "gap": 46
+    },
+    {
+      "gameweek": 19,
+      "manager1_gw_points": 29,
+      "manager1_total": 1093,
+      "manager2_gw_points": 49,
+      "manager2_total": 1067,
+      "gap": 26
+    },
+    {
+      "gameweek": 20,
+      "manager1_gw_points": 45,
+      "manager1_total": 1138,
+      "manager2_gw_points": 45,
+      "manager2_total": 1112,
+      "gap": 26
+    },
+    {
+      "gameweek": 21,
+      "manager1_gw_points": 49,
+      "manager1_total": 1187,
+      "manager2_gw_points": 52,
+      "manager2_total": 1164,
+      "gap": 23
+    },
+    {
+      "gameweek": 22,
+      "manager1_gw_points": 37,
+      "manager1_total": 1224,
+      "manager2_gw_points": 37,
+      "manager2_total": 1201,
+      "gap": 23
+    },
+    {
+      "gameweek": 23,
+      "manager1_gw_points": 45,
+      "manager1_total": 1269,
+      "manager2_gw_points": 47,
+      "manager2_total": 1248,
+      "gap": 21
+    },
+    {
+      "gameweek": 24,
+      "manager1_gw_points": 52,
+      "manager1_total": 1321,
+      "manager2_gw_points": 74,
+      "manager2_total": 1322,
+      "gap": -1
+    },
+    {
+      "gameweek": 25,
+      "manager1_gw_points": 61,
+      "manager1_total": 1382,
+      "manager2_gw_points": 101,
+      "manager2_total": 1423,
+      "gap": -41
+    },
+    {
+      "gameweek": 26,
+      "manager1_gw_points": 72,
+      "manager1_total": 1454,
+      "manager2_gw_points": 68,
+      "manager2_total": 1491,
+      "gap": -37
+    },
+    {
+      "gameweek": 27,
+      "manager1_gw_points": 52,
+      "manager1_total": 1506,
+      "manager2_gw_points": 47,
+      "manager2_total": 1538,
+      "gap": -32
+    },
+    {
+      "gameweek": 28,
+      "manager1_gw_points": 71,
+      "manager1_total": 1577,
+      "manager2_gw_points": 70,
+      "manager2_total": 1608,
+      "gap": -31
+    },
+    {
+      "gameweek": 29,
+      "manager1_gw_points": 72,
+      "manager1_total": 1649,
+      "manager2_gw_points": 84,
+      "manager2_total": 1692,
+      "gap": -43
+    },
+    {
+      "gameweek": 30,
+      "manager1_gw_points": 55,
+      "manager1_total": 1704,
+      "manager2_gw_points": 50,
+      "manager2_total": 1742,
+      "gap": -38
+    },
+    {
+      "gameweek": 31,
+      "manager1_gw_points": 71,
+      "manager1_total": 1775,
+      "manager2_gw_points": 59,
+      "manager2_total": 1801,
+      "gap": -26
+    },
+    {
+      "gameweek": 32,
+      "manager1_gw_points": 77,
+      "manager1_total": 1852,
+      "manager2_gw_points": 55,
+      "manager2_total": 1856,
+      "gap": -4
+    }
+  ],
+  "last_updated": "2026-04-14T09:16:26Z"
 }
