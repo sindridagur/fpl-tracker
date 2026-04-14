@@ -123,6 +123,32 @@
       margin-top: 8px;
     }
 
+    .reaction {
+      max-width: 680px;
+      margin: 0 auto 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px 20px;
+    }
+
+    .reaction img {
+      width: 120px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    .reaction .reaction-caption {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
     .chart-section {
       max-width: 680px;
       margin: 0 auto 32px;
@@ -225,16 +251,16 @@
 <body>
 
 <header>
-  <h1>â½ FPL Gap Tracker</h1>
-  <p id="last-updated">Loadingâ¦</p>
+  <h1>⚽ FPL Gap Tracker</h1>
+  <p id="last-updated">Loading…</p>
 </header>
 
 <div id="app">
-  <div class="loading">Loading FPL dataâ¦</div>
+  <div class="loading">Loading FPL data…</div>
 </div>
 
 <footer>
-  Data auto-updates weekly via GitHub Actions Â· Fantasy Premier League
+  Data auto-updates daily via GitHub Actions · Fantasy Premier League
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
@@ -270,6 +296,24 @@
       ? `${leader} leads by ${absGap} point${absGap !== 1 ? 's' : ''}`
       : 'All square!';
 
+    // Reaction GIF logic
+    const prevGap = gameweeks.length >= 2 ? gameweeks[gameweeks.length - 2].gap : null;
+    let gifUrl = null;
+    let gifCaption = null;
+    if (gap > 0) {
+      gifUrl = 'https://media.giphy.com/media/119pLwyWg8ScTK/giphy.gif';
+      gifCaption = 'Sindri rn:';
+    } else if (gap < 0) {
+      const shrinking = prevGap !== null && Math.abs(gap) < Math.abs(prevGap);
+      if (shrinking) {
+        gifUrl = 'https://media1.tenor.com/m/HR3YZjYlr_UAAAAC/nervous-sweating-sweating-bullets.gif';
+        gifCaption = 'Bilið að minnka, Helgi rn:';
+      } else {
+        gifUrl = 'https://i.pinimg.com/originals/c6/f5/ea/c6f5eaf6ace90cd436485272551ed2eb.gif';
+        gifCaption = 'Helgi rn:';
+      }
+    }
+
     document.getElementById('app').innerHTML = `
       <div class="cards">
         <div class="card">
@@ -291,6 +335,12 @@
         <div class="gap-value ${gapClass}">${gap > 0 ? '+' : ''}${gap}</div>
         <div class="gap-desc">${gapDesc}</div>
       </div>
+
+      ${gifUrl ? `
+      <div class="reaction">
+        <img src="${gifUrl}" alt="reaction gif" />
+        <div class="reaction-caption">${gifCaption}</div>
+      </div>` : ''}
 
       <div class="chart-section">
         <h2>Gap Over the Season</h2>
@@ -340,7 +390,7 @@
       data: {
         labels,
         datasets: [{
-          label: 'Gap (M1 â M2)',
+          label: 'Gap (M1 − M2)',
           data: gaps,
           backgroundColor: colors,
           borderRadius: 4,
@@ -380,7 +430,7 @@
     .catch(err => {
       document.getElementById('app').innerHTML =
         `<div class="error">
-          <p>â ï¸ Could not load FPL data.</p>
+          <p>⚠️ Could not load FPL data.</p>
           <p style="font-size:0.8rem;margin-top:8px;color:#a07bb5">${err.message}</p>
           <p style="font-size:0.8rem;margin-top:4px;color:#a07bb5">
             Run the GitHub Actions workflow to generate data/fpl_data.json
