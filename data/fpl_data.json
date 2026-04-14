@@ -1,0 +1,18 @@
+{
+  "manager1": {
+    "id": "6819004",
+    "name": "",
+    "team_name": "Manager 1",
+    "overall_rank": null,
+    "total_points": 0
+  },
+  "manager2": {
+    "id": "6839236",
+    "name": "",
+    "team_name": "Manager 2",
+    "overall_rank": null,
+    "total_points": 0
+  },
+  "gameweeks": [],
+  "last_updated": null
+}
