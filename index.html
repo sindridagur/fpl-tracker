@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FPL Gap Tracker</title>
+  <style>
+    :root {
+      --green: #00ff87;
+      --purple: #37003c;
+      --light-purple: #56076e;
+      --card-bg: #1e0628;
+      --text: #f0e6f6;
+      --muted: #a07bb5;
+      --red: #ff4d4d;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--purple);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 24px 16px 48px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--green);
+    }
+
+    header p {
+      color: var(--muted);
+      font-size: 0.875rem;
+      margin-top: 4px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      max-width: 680px;
+      margin: 0 auto 32px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card .team-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .card .manager-name {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .card .points {
+      font-size: 2.4rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .card .points-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .gap-banner {
+      max-width: 680px;
+      margin: 0 auto 32px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px 24px;
+      text-align: center;
+    }
+
+    .gap-banner .gap-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .gap-banner .gap-value {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--green);
+      line-height: 1;
+    }
+
+    .gap-banner .gap-value.negative {
+      color: var(--red);
+    }
+
+    .gap-banner .gap-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .chart-section {
+      max-width: 680px;
+      margin: 0 auto 32px;
+    }
+
+    .chart-section h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    .chart-wrap {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      overflow-x: auto;
+    }
+
+    canvas {
+      width: 100% !important;
+    }
+
+    .table-section {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .table-section h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card-bg);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      font-size: 0.875rem;
+    }
+
+    thead tr {
+      background: var(--light-purple);
+    }
+
+    th, td {
+      padding: 10px 14px;
+      text-align: center;
+    }
+
+    th {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--muted);
+    }
+
+    tbody tr:nth-child(even) {
+      background: rgba(255,255,255,0.03);
+    }
+
+    tbody tr:hover {
+      background: rgba(255,255,255,0.06);
+    }
+
+    td.gap-positive { color: var(--green); font-weight: 700; }
+    td.gap-negative { color: var(--red); font-weight: 700; }
+    td.gap-zero { color: var(--muted); }
+
+    .loading {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .error {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--red);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 48px;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>â½ FPL Gap Tracker</h1>
+  <p id="last-updated">Loadingâ¦</p>
+</header>
+
+<div id="app">
+  <div class="loading">Loading FPL dataâ¦</div>
+</div>
+
+<footer>
+  Data auto-updates weekly via GitHub Actions Â· Fantasy Premier League
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+  const DATA_URL = 'data/fpl_data.json';
+
+  async function loadData() {
+    const res = await fetch(DATA_URL + '?t=' + Date.now());
+    if (!res.ok) throw new Error('Failed to load fpl_data.json');
+    return res.json();
+  }
+
+  function formatDate(iso) {
+    const d = new Date(iso);
+    return d.toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' });
+  }
+
+  function render(data) {
+    const { manager1: m1, manager2: m2, gameweeks, last_updated } = data;
+
+    document.getElementById('last-updated').textContent =
+      last_updated ? 'Last updated: ' + formatDate(last_updated) : '';
+
+    const latest = gameweeks[gameweeks.length - 1] || {};
+    const m1Total = latest.manager1_total ?? 0;
+    const m2Total = latest.manager2_total ?? 0;
+    const gap = latest.gap ?? 0;
+    const absGap = Math.abs(gap);
+    const leader = gap > 0 ? m1.team_name : gap < 0 ? m2.team_name : null;
+
+    const gapClass = gap > 0 ? '' : gap < 0 ? 'negative' : '';
+    const gapDesc = leader
+      ? `${leader} leads by ${absGap} point${absGap !== 1 ? 's' : ''}`
+      : 'All square!';
+
+    document.getElementById('app').innerHTML = `
+      <div class="cards">
+        <div class="card">
+          <div class="team-name">${m1.team_name}</div>
+          <div class="manager-name">${m1.name}</div>
+          <div class="points">${m1Total.toLocaleString()}</div>
+          <div class="points-label">Total Points</div>
+        </div>
+        <div class="card">
+          <div class="team-name">${m2.team_name}</div>
+          <div class="manager-name">${m2.name}</div>
+          <div class="points">${m2Total.toLocaleString()}</div>
+          <div class="points-label">Total Points</div>
+        </div>
+      </div>
+
+      <div class="gap-banner">
+        <div class="gap-label">Current Gap</div>
+        <div class="gap-value ${gapClass}">${gap > 0 ? '+' : ''}${gap}</div>
+        <div class="gap-desc">${gapDesc}</div>
+      </div>
+
+      <div class="chart-section">
+        <h2>Gap Over the Season</h2>
+        <div class="chart-wrap">
+          <canvas id="gapChart" height="220"></canvas>
+        </div>
+      </div>
+
+      <div class="table-section">
+        <h2>Gameweek Breakdown</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>GW</th>
+              <th>${m1.team_name}</th>
+              <th>${m2.team_name}</th>
+              <th>${m1.team_name} Total</th>
+              <th>${m2.team_name} Total</th>
+              <th>Gap</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${[...gameweeks].reverse().map(gw => {
+              const g = gw.gap;
+              const cls = g > 0 ? 'gap-positive' : g < 0 ? 'gap-negative' : 'gap-zero';
+              return `<tr>
+                <td>GW${gw.gameweek}</td>
+                <td>${gw.manager1_gw_points}</td>
+                <td>${gw.manager2_gw_points}</td>
+                <td>${gw.manager1_total}</td>
+                <td>${gw.manager2_total}</td>
+                <td class="${cls}">${g > 0 ? '+' : ''}${g}</td>
+              </tr>`;
+            }).join('')}
+          </tbody>
+        </table>
+      </div>
+    `;
+
+    // Draw chart
+    const labels = gameweeks.map(gw => 'GW' + gw.gameweek);
+    const gaps = gameweeks.map(gw => gw.gap);
+    const colors = gaps.map(g => g >= 0 ? 'rgba(0,255,135,0.8)' : 'rgba(255,77,77,0.8)');
+
+    new Chart(document.getElementById('gapChart'), {
+      type: 'bar',
+      data: {
+        labels,
+        datasets: [{
+          label: 'Gap (M1 â M2)',
+          data: gaps,
+          backgroundColor: colors,
+          borderRadius: 4,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: ctx => {
+                const v = ctx.parsed.y;
+                return v >= 0
+                  ? `${m1.team_name} leads by ${v}`
+                  : `${m2.team_name} leads by ${Math.abs(v)}`;
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            ticks: { color: '#a07bb5', font: { size: 11 } },
+            grid: { color: 'rgba(255,255,255,0.05)' },
+          },
+          y: {
+            ticks: { color: '#a07bb5' },
+            grid: { color: 'rgba(255,255,255,0.05)' },
+          }
+        }
+      }
+    });
+  }
+
+  loadData()
+    .then(render)
+    .catch(err => {
+      document.getElementById('app').innerHTML =
+        `<div class="error">
+          <p>â ï¸ Could not load FPL data.</p>
+          <p style="font-size:0.8rem;margin-top:8px;color:#a07bb5">${err.message}</p>
+          <p style="font-size:0.8rem;margin-top:4px;color:#a07bb5">
+            Run the GitHub Actions workflow to generate data/fpl_data.json
+          </p>
+        </div>`;
+      document.getElementById('last-updated').textContent = '';
+    });
+</script>
+</body>
+</html>
