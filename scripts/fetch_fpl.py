@@ -34,9 +34,15 @@ def main():
     m1_gws = {gw["event"]: gw for gw in m1_history["current"]}
     m2_gws = {gw["event"]: gw for gw in m2_history["current"]}
 
-    # League started after GW1 â subtract GW1 points from all cumulative totals
-    m1_gw1 = m1_gws.get(1, {}).get("points", 0)
-    m2_gw1 = m2_gws.get(1, {}).get("points", 0)
+    # League started at GW2. Compute the pre-league baseline by looking at what
+    # was already in each manager's cumulative total before GW2 began.
+    # baseline = GW2 total_points - GW2 points  (i.e. everything before GW2)
+    # This is more reliable than reading GW1 directly, as some managers have
+    # a phantom GW1 entry (e.g. 4 pts from auto-pick / late registration).
+    m1_gw2 = m1_gws.get(2, {})
+    m2_gw2 = m2_gws.get(2, {})
+    m1_baseline = m1_gw2.get("total_points", 0) - m1_gw2.get("points", 0)
+    m2_baseline = m2_gw2.get("total_points", 0) - m2_gw2.get("points", 0)
 
     all_gws = sorted(gw for gw in set(list(m1_gws.keys()) + list(m2_gws.keys())) if gw > 1)
 
@@ -45,8 +51,8 @@ def main():
         m1_data = m1_gws.get(gw, {})
         m2_data = m2_gws.get(gw, {})
 
-        m1_total = m1_data.get("total_points", 0) - m1_gw1
-        m2_total = m2_data.get("total_points", 0) - m2_gw1
+        m1_total = m1_data.get("total_points", 0) - m1_baseline
+        m2_total = m2_data.get("total_points", 0) - m2_baseline
 
         gameweeks.append({
             "gameweek": gw,
@@ -63,14 +69,14 @@ def main():
             "name": f"{m1_info.get('player_first_name', '')} {m1_info.get('player_last_name', '')}".strip(),
             "team_name": m1_info.get("name", "Manager 1"),
             "overall_rank": m1_info.get("summary_overall_rank"),
-            "total_points": (m1_info.get("summary_overall_points") or 0) - m1_gw1,
+            "total_points": (m1_info.get("summary_overall_points") or 0) - m1_baseline,
         },
         "manager2": {
             "id": MANAGER_2_ID,
             "name": f"{m2_info.get('player_first_name', '')} {m2_info.get('player_last_name', '')}".strip(),
             "team_name": m2_info.get("name", "Manager 2"),
             "overall_rank": m2_info.get("summary_overall_rank"),
-            "total_points": (m2_info.get("summary_overall_points") or 0) - m2_gw1,
+            "total_points": (m2_info.get("summary_overall_points") or 0) - m2_baseline,
         },
         "gameweeks": gameweeks,
         "last_updated": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
