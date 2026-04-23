@@ -3,15 +3,15 @@
     "id": "6819004",
     "name": "Sindri Sindrason",
     "team_name": "zipzap",
-    "overall_rank": 384499,
-    "total_points": 1856
+    "overall_rank": 315126,
+    "total_points": 1900
   },
   "manager2": {
     "id": "6839236",
     "name": "Helgi Hrafn Bergmann",
     "team_name": "Boltagooners FC",
-    "overall_rank": 571944,
-    "total_points": 1841
+    "overall_rank": 637760,
+    "total_points": 1867
   },
   "gameweeks": [
     {
@@ -264,12 +264,12 @@
     },
     {
       "gameweek": 33,
-      "manager1_gw_points": 65,
-      "manager1_total": 1856,
-      "manager2_gw_points": 39,
-      "manager2_total": 1841,
-      "gap": 15
+      "manager1_gw_points": 109,
+      "manager1_total": 1900,
+      "manager2_gw_points": 65,
+      "manager2_total": 1867,
+      "gap": 33
     }
   ],
-  "last_updated": "2026-04-22T09:44:13Z"
+  "last_updated": "2026-04-23T09:51:58Z"
 }
