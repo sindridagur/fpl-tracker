@@ -1,275 +1,1970 @@
 {
-  "manager1": {
-    "id": "6819004",
-    "name": "Sindri Sindrason",
-    "team_name": "zipzap",
-    "overall_rank": 315126,
-    "total_points": 1900
-  },
-  "manager2": {
-    "id": "6839236",
-    "name": "Helgi Hrafn Bergmann",
-    "team_name": "Boltagooners FC",
-    "overall_rank": 637760,
-    "total_points": 1867
-  },
+  "managers": [
+    {
+      "id": "6819004",
+      "nickname": "Sindri",
+      "team_name": "zipzap",
+      "player_name": "Sindri Sindrason",
+      "total_points": 1909
+    },
+    {
+      "id": "6839236",
+      "nickname": "Helgi",
+      "team_name": "Boltagooners FC",
+      "player_name": "Helgi Hrafn Bergmann",
+      "total_points": 1876
+    },
+    {
+      "id": "4470214",
+      "nickname": "Emmi",
+      "team_name": "The Flying Dutchman",
+      "player_name": "ElmarA Arnarsson",
+      "total_points": 1867
+    },
+    {
+      "id": "6590777",
+      "nickname": "Olli",
+      "team_name": "Ahlelele Ahlelah FC",
+      "player_name": "Olaf Rusak",
+      "total_points": 1741
+    },
+    {
+      "id": "9072831",
+      "nickname": "H\u00f6gni",
+      "team_name": "Benzinrotta",
+      "player_name": "Hogni Hognason",
+      "total_points": 1702
+    },
+    {
+      "id": "8305956",
+      "nickname": "Tommi",
+      "team_name": "Lebaach",
+      "player_name": "T\u00f3mas \u00d6rn\u00f3lfsson",
+      "total_points": 1656
+    },
+    {
+      "id": "10576515",
+      "nickname": "Maggi",
+      "team_name": "Maggi Snorra",
+      "player_name": "Sigur\u00fe\u00f3r Maggi Snorrason",
+      "total_points": 1646
+    }
+  ],
   "gameweeks": [
     {
       "gameweek": 2,
-      "manager1_gw_points": 63,
-      "manager1_total": 63,
-      "manager2_gw_points": 53,
-      "manager2_total": 53,
-      "gap": 10
+      "standings": [
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 63,
+          "total_points": 63
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 60,
+          "total_points": 60
+        },
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 53,
+          "total_points": 53
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 53,
+          "total_points": 53
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 48,
+          "total_points": 48
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 38,
+          "total_points": 38
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 37,
+          "total_points": 37
+        }
+      ],
+      "leader_id": "6819004",
+      "leader_nickname": "Sindri",
+      "second_nickname": "Olli",
+      "gap": 3
     },
     {
       "gameweek": 3,
-      "manager1_gw_points": 62,
-      "manager1_total": 125,
-      "manager2_gw_points": 59,
-      "manager2_total": 108,
+      "standings": [
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 62,
+          "total_points": 125
+        },
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 59,
+          "total_points": 108
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 47,
+          "total_points": 107
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 66,
+          "total_points": 103
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 46,
+          "total_points": 99
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 56,
+          "total_points": 94
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 19,
+          "total_points": 67
+        }
+      ],
+      "leader_id": "6819004",
+      "leader_nickname": "Sindri",
+      "second_nickname": "Helgi",
       "gap": 17
     },
     {
       "gameweek": 4,
-      "manager1_gw_points": 91,
-      "manager1_total": 216,
-      "manager2_gw_points": 79,
-      "manager2_total": 187,
+      "standings": [
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 91,
+          "total_points": 216
+        },
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 79,
+          "total_points": 187
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 78,
+          "total_points": 185
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 67,
+          "total_points": 170
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 67,
+          "total_points": 166
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 61,
+          "total_points": 155
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 51,
+          "total_points": 118
+        }
+      ],
+      "leader_id": "6819004",
+      "leader_nickname": "Sindri",
+      "second_nickname": "Helgi",
       "gap": 29
     },
     {
       "gameweek": 5,
-      "manager1_gw_points": 56,
-      "manager1_total": 272,
-      "manager2_gw_points": 53,
-      "manager2_total": 240,
-      "gap": 32
+      "standings": [
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 56,
+          "total_points": 272
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 57,
+          "total_points": 242
+        },
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 53,
+          "total_points": 240
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 51,
+          "total_points": 221
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 39,
+          "total_points": 205
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 41,
+          "total_points": 196
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 55,
+          "total_points": 173
+        }
+      ],
+      "leader_id": "6819004",
+      "leader_nickname": "Sindri",
+      "second_nickname": "Olli",
+      "gap": 30
     },
     {
       "gameweek": 6,
-      "manager1_gw_points": 73,
-      "manager1_total": 341,
-      "manager2_gw_points": 60,
-      "manager2_total": 300,
+      "standings": [
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 73,
+          "total_points": 341
+        },
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 60,
+          "total_points": 300
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 54,
+          "total_points": 296
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 67,
+          "total_points": 284
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 64,
+          "total_points": 269
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 35,
+          "total_points": 231
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 30,
+          "total_points": 203
+        }
+      ],
+      "leader_id": "6819004",
+      "leader_nickname": "Sindri",
+      "second_nickname": "Helgi",
       "gap": 41
     },
     {
       "gameweek": 7,
-      "manager1_gw_points": 73,
-      "manager1_total": 414,
-      "manager2_gw_points": 69,
-      "manager2_total": 369,
+      "standings": [
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 73,
+          "total_points": 414
+        },
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 69,
+          "total_points": 369
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 61,
+          "total_points": 357
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 65,
+          "total_points": 349
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 75,
+          "total_points": 344
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 52,
+          "total_points": 283
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 60,
+          "total_points": 263
+        }
+      ],
+      "leader_id": "6819004",
+      "leader_nickname": "Sindri",
+      "second_nickname": "Helgi",
       "gap": 45
     },
     {
       "gameweek": 8,
-      "manager1_gw_points": 64,
-      "manager1_total": 478,
-      "manager2_gw_points": 52,
-      "manager2_total": 421,
-      "gap": 57
-    },
-    {
-      "gameweek": 9,
-      "manager1_gw_points": 58,
-      "manager1_total": 536,
-      "manager2_gw_points": 66,
-      "manager2_total": 487,
-      "gap": 49
-    },
-    {
-      "gameweek": 10,
-      "manager1_gw_points": 77,
-      "manager1_total": 613,
-      "manager2_gw_points": 78,
-      "manager2_total": 565,
-      "gap": 48
-    },
-    {
-      "gameweek": 11,
-      "manager1_gw_points": 39,
-      "manager1_total": 652,
-      "manager2_gw_points": 31,
-      "manager2_total": 596,
-      "gap": 56
-    },
-    {
-      "gameweek": 12,
-      "manager1_gw_points": 26,
-      "manager1_total": 678,
-      "manager2_gw_points": 25,
-      "manager2_total": 621,
-      "gap": 57
-    },
-    {
-      "gameweek": 13,
-      "manager1_gw_points": 30,
-      "manager1_total": 708,
-      "manager2_gw_points": 31,
-      "manager2_total": 652,
-      "gap": 56
-    },
-    {
-      "gameweek": 14,
-      "manager1_gw_points": 71,
-      "manager1_total": 779,
-      "manager2_gw_points": 82,
-      "manager2_total": 734,
-      "gap": 45
-    },
-    {
-      "gameweek": 15,
-      "manager1_gw_points": 54,
-      "manager1_total": 833,
-      "manager2_gw_points": 45,
-      "manager2_total": 779,
-      "gap": 54
-    },
-    {
-      "gameweek": 16,
-      "manager1_gw_points": 56,
-      "manager1_total": 889,
-      "manager2_gw_points": 58,
-      "manager2_total": 837,
-      "gap": 52
-    },
-    {
-      "gameweek": 17,
-      "manager1_gw_points": 87,
-      "manager1_total": 976,
-      "manager2_gw_points": 85,
-      "manager2_total": 922,
-      "gap": 54
-    },
-    {
-      "gameweek": 18,
-      "manager1_gw_points": 27,
-      "manager1_total": 1003,
-      "manager2_gw_points": 42,
-      "manager2_total": 964,
+      "standings": [
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 64,
+          "total_points": 478
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 95,
+          "total_points": 439
+        },
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 52,
+          "total_points": 421
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 56,
+          "total_points": 413
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 60,
+          "total_points": 409
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 61,
+          "total_points": 344
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 36,
+          "total_points": 299
+        }
+      ],
+      "leader_id": "6819004",
+      "leader_nickname": "Sindri",
+      "second_nickname": "Tommi",
       "gap": 39
     },
     {
+      "gameweek": 9,
+      "standings": [
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 58,
+          "total_points": 536
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 62,
+          "total_points": 501
+        },
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 66,
+          "total_points": 487
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 42,
+          "total_points": 455
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 42,
+          "total_points": 451
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 47,
+          "total_points": 391
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 44,
+          "total_points": 343
+        }
+      ],
+      "leader_id": "6819004",
+      "leader_nickname": "Sindri",
+      "second_nickname": "Tommi",
+      "gap": 35
+    },
+    {
+      "gameweek": 10,
+      "standings": [
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 77,
+          "total_points": 613
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 86,
+          "total_points": 579
+        },
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 78,
+          "total_points": 565
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 78,
+          "total_points": 533
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 72,
+          "total_points": 523
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 52,
+          "total_points": 443
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 57,
+          "total_points": 400
+        }
+      ],
+      "leader_id": "6819004",
+      "leader_nickname": "Sindri",
+      "second_nickname": "Tommi",
+      "gap": 34
+    },
+    {
+      "gameweek": 11,
+      "standings": [
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 39,
+          "total_points": 652
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 37,
+          "total_points": 616
+        },
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 31,
+          "total_points": 596
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 48,
+          "total_points": 571
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 28,
+          "total_points": 557
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 32,
+          "total_points": 475
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 55,
+          "total_points": 455
+        }
+      ],
+      "leader_id": "6819004",
+      "leader_nickname": "Sindri",
+      "second_nickname": "Tommi",
+      "gap": 36
+    },
+    {
+      "gameweek": 12,
+      "standings": [
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 26,
+          "total_points": 678
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 34,
+          "total_points": 650
+        },
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 25,
+          "total_points": 621
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 44,
+          "total_points": 615
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 27,
+          "total_points": 584
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 31,
+          "total_points": 506
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 41,
+          "total_points": 496
+        }
+      ],
+      "leader_id": "6819004",
+      "leader_nickname": "Sindri",
+      "second_nickname": "Tommi",
+      "gap": 28
+    },
+    {
+      "gameweek": 13,
+      "standings": [
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 30,
+          "total_points": 708
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 36,
+          "total_points": 686
+        },
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 31,
+          "total_points": 652
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 32,
+          "total_points": 647
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 20,
+          "total_points": 600
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 41,
+          "total_points": 537
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 27,
+          "total_points": 533
+        }
+      ],
+      "leader_id": "6819004",
+      "leader_nickname": "Sindri",
+      "second_nickname": "Tommi",
+      "gap": 22
+    },
+    {
+      "gameweek": 14,
+      "standings": [
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 71,
+          "total_points": 779
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 75,
+          "total_points": 761
+        },
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 82,
+          "total_points": 734
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 69,
+          "total_points": 716
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 67,
+          "total_points": 667
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 87,
+          "total_points": 624
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 69,
+          "total_points": 602
+        }
+      ],
+      "leader_id": "6819004",
+      "leader_nickname": "Sindri",
+      "second_nickname": "Tommi",
+      "gap": 18
+    },
+    {
+      "gameweek": 15,
+      "standings": [
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 54,
+          "total_points": 833
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 42,
+          "total_points": 803
+        },
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 45,
+          "total_points": 779
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 57,
+          "total_points": 773
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 46,
+          "total_points": 713
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 56,
+          "total_points": 680
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 58,
+          "total_points": 660
+        }
+      ],
+      "leader_id": "6819004",
+      "leader_nickname": "Sindri",
+      "second_nickname": "Tommi",
+      "gap": 30
+    },
+    {
+      "gameweek": 16,
+      "standings": [
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 56,
+          "total_points": 889
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 55,
+          "total_points": 858
+        },
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 58,
+          "total_points": 837
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 63,
+          "total_points": 836
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 79,
+          "total_points": 792
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 80,
+          "total_points": 760
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 59,
+          "total_points": 719
+        }
+      ],
+      "leader_id": "6819004",
+      "leader_nickname": "Sindri",
+      "second_nickname": "Tommi",
+      "gap": 31
+    },
+    {
+      "gameweek": 17,
+      "standings": [
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 87,
+          "total_points": 976
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 71,
+          "total_points": 929
+        },
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 85,
+          "total_points": 922
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 71,
+          "total_points": 907
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 84,
+          "total_points": 876
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 101,
+          "total_points": 861
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 78,
+          "total_points": 797
+        }
+      ],
+      "leader_id": "6819004",
+      "leader_nickname": "Sindri",
+      "second_nickname": "Tommi",
+      "gap": 47
+    },
+    {
+      "gameweek": 18,
+      "standings": [
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 27,
+          "total_points": 1003
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 56,
+          "total_points": 985
+        },
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 42,
+          "total_points": 964
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 38,
+          "total_points": 945
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 38,
+          "total_points": 914
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 39,
+          "total_points": 900
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 57,
+          "total_points": 854
+        }
+      ],
+      "leader_id": "6819004",
+      "leader_nickname": "Sindri",
+      "second_nickname": "Tommi",
+      "gap": 18
+    },
+    {
       "gameweek": 19,
-      "manager1_gw_points": 29,
-      "manager1_total": 1032,
-      "manager2_gw_points": 49,
-      "manager2_total": 1013,
-      "gap": 19
+      "standings": [
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 29,
+          "total_points": 1032
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 32,
+          "total_points": 1017
+        },
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 49,
+          "total_points": 1013
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 38,
+          "total_points": 983
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 35,
+          "total_points": 949
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 33,
+          "total_points": 933
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 43,
+          "total_points": 897
+        }
+      ],
+      "leader_id": "6819004",
+      "leader_nickname": "Sindri",
+      "second_nickname": "Tommi",
+      "gap": 15
     },
     {
       "gameweek": 20,
-      "manager1_gw_points": 45,
-      "manager1_total": 1077,
-      "manager2_gw_points": 45,
-      "manager2_total": 1058,
+      "standings": [
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 45,
+          "total_points": 1077
+        },
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 45,
+          "total_points": 1058
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 41,
+          "total_points": 1058
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 52,
+          "total_points": 1031
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 49,
+          "total_points": 998
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 31,
+          "total_points": 964
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 55,
+          "total_points": 952
+        }
+      ],
+      "leader_id": "6819004",
+      "leader_nickname": "Sindri",
+      "second_nickname": "Helgi",
       "gap": 19
     },
     {
       "gameweek": 21,
-      "manager1_gw_points": 49,
-      "manager1_total": 1126,
-      "manager2_gw_points": 52,
-      "manager2_total": 1110,
-      "gap": 16
+      "standings": [
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 49,
+          "total_points": 1126
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 61,
+          "total_points": 1119
+        },
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 52,
+          "total_points": 1110
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 58,
+          "total_points": 1089
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 41,
+          "total_points": 1039
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 67,
+          "total_points": 1031
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 59,
+          "total_points": 1011
+        }
+      ],
+      "leader_id": "6819004",
+      "leader_nickname": "Sindri",
+      "second_nickname": "Tommi",
+      "gap": 7
     },
     {
       "gameweek": 22,
-      "manager1_gw_points": 37,
-      "manager1_total": 1163,
-      "manager2_gw_points": 37,
-      "manager2_total": 1147,
-      "gap": 16
+      "standings": [
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 37,
+          "total_points": 1163
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 42,
+          "total_points": 1157
+        },
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 37,
+          "total_points": 1147
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 36,
+          "total_points": 1125
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 36,
+          "total_points": 1075
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 38,
+          "total_points": 1069
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 35,
+          "total_points": 1046
+        }
+      ],
+      "leader_id": "6819004",
+      "leader_nickname": "Sindri",
+      "second_nickname": "Tommi",
+      "gap": 6
     },
     {
       "gameweek": 23,
-      "manager1_gw_points": 45,
-      "manager1_total": 1208,
-      "manager2_gw_points": 47,
-      "manager2_total": 1194,
+      "standings": [
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 45,
+          "total_points": 1208
+        },
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 47,
+          "total_points": 1194
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 32,
+          "total_points": 1189
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 45,
+          "total_points": 1170
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 46,
+          "total_points": 1115
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 29,
+          "total_points": 1100
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 44,
+          "total_points": 1090
+        }
+      ],
+      "leader_id": "6819004",
+      "leader_nickname": "Sindri",
+      "second_nickname": "Helgi",
       "gap": 14
     },
     {
       "gameweek": 24,
-      "manager1_gw_points": 52,
-      "manager1_total": 1260,
-      "manager2_gw_points": 74,
-      "manager2_total": 1268,
-      "gap": -8
+      "standings": [
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 74,
+          "total_points": 1268
+        },
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 52,
+          "total_points": 1260
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 47,
+          "total_points": 1236
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 63,
+          "total_points": 1233
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 54,
+          "total_points": 1169
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 70,
+          "total_points": 1166
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 43,
+          "total_points": 1133
+        }
+      ],
+      "leader_id": "6839236",
+      "leader_nickname": "Helgi",
+      "second_nickname": "Sindri",
+      "gap": 8
     },
     {
       "gameweek": 25,
-      "manager1_gw_points": 61,
-      "manager1_total": 1321,
-      "manager2_gw_points": 101,
-      "manager2_total": 1369,
-      "gap": -48
+      "standings": [
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 101,
+          "total_points": 1369
+        },
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 61,
+          "total_points": 1321
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 78,
+          "total_points": 1314
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 73,
+          "total_points": 1306
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 80,
+          "total_points": 1246
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 66,
+          "total_points": 1235
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 64,
+          "total_points": 1197
+        }
+      ],
+      "leader_id": "6839236",
+      "leader_nickname": "Helgi",
+      "second_nickname": "Sindri",
+      "gap": 48
     },
     {
       "gameweek": 26,
-      "manager1_gw_points": 72,
-      "manager1_total": 1393,
-      "manager2_gw_points": 68,
-      "manager2_total": 1437,
-      "gap": -44
+      "standings": [
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 68,
+          "total_points": 1437
+        },
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 72,
+          "total_points": 1393
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 66,
+          "total_points": 1372
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 53,
+          "total_points": 1367
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 71,
+          "total_points": 1306
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 57,
+          "total_points": 1299
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 61,
+          "total_points": 1258
+        }
+      ],
+      "leader_id": "6839236",
+      "leader_nickname": "Helgi",
+      "second_nickname": "Sindri",
+      "gap": 44
     },
     {
       "gameweek": 27,
-      "manager1_gw_points": 52,
-      "manager1_total": 1445,
-      "manager2_gw_points": 47,
-      "manager2_total": 1484,
-      "gap": -39
+      "standings": [
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 47,
+          "total_points": 1484
+        },
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 52,
+          "total_points": 1445
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 52,
+          "total_points": 1424
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 35,
+          "total_points": 1402
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 40,
+          "total_points": 1346
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 36,
+          "total_points": 1335
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 46,
+          "total_points": 1304
+        }
+      ],
+      "leader_id": "6839236",
+      "leader_nickname": "Helgi",
+      "second_nickname": "Sindri",
+      "gap": 39
     },
     {
       "gameweek": 28,
-      "manager1_gw_points": 71,
-      "manager1_total": 1516,
-      "manager2_gw_points": 70,
-      "manager2_total": 1554,
-      "gap": -38
+      "standings": [
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 70,
+          "total_points": 1554
+        },
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 71,
+          "total_points": 1516
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 85,
+          "total_points": 1509
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 40,
+          "total_points": 1442
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 70,
+          "total_points": 1405
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 35,
+          "total_points": 1381
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 71,
+          "total_points": 1375
+        }
+      ],
+      "leader_id": "6839236",
+      "leader_nickname": "Helgi",
+      "second_nickname": "Sindri",
+      "gap": 38
     },
     {
       "gameweek": 29,
-      "manager1_gw_points": 72,
-      "manager1_total": 1588,
-      "manager2_gw_points": 84,
-      "manager2_total": 1638,
-      "gap": -50
+      "standings": [
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 84,
+          "total_points": 1638
+        },
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 72,
+          "total_points": 1588
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 63,
+          "total_points": 1572
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 51,
+          "total_points": 1493
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 74,
+          "total_points": 1479
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 62,
+          "total_points": 1437
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 55,
+          "total_points": 1436
+        }
+      ],
+      "leader_id": "6839236",
+      "leader_nickname": "Helgi",
+      "second_nickname": "Sindri",
+      "gap": 50
     },
     {
       "gameweek": 30,
-      "manager1_gw_points": 55,
-      "manager1_total": 1643,
-      "manager2_gw_points": 50,
-      "manager2_total": 1688,
-      "gap": -45
+      "standings": [
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 50,
+          "total_points": 1688
+        },
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 55,
+          "total_points": 1643
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 52,
+          "total_points": 1624
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 63,
+          "total_points": 1542
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 46,
+          "total_points": 1539
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 52,
+          "total_points": 1488
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 48,
+          "total_points": 1485
+        }
+      ],
+      "leader_id": "6839236",
+      "leader_nickname": "Helgi",
+      "second_nickname": "Sindri",
+      "gap": 45
     },
     {
       "gameweek": 31,
-      "manager1_gw_points": 71,
-      "manager1_total": 1714,
-      "manager2_gw_points": 59,
-      "manager2_total": 1747,
-      "gap": -33
+      "standings": [
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 59,
+          "total_points": 1747
+        },
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 71,
+          "total_points": 1714
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 64,
+          "total_points": 1680
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 63,
+          "total_points": 1605
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 30,
+          "total_points": 1569
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 64,
+          "total_points": 1549
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 50,
+          "total_points": 1538
+        }
+      ],
+      "leader_id": "6839236",
+      "leader_nickname": "Helgi",
+      "second_nickname": "Sindri",
+      "gap": 33
     },
     {
       "gameweek": 32,
-      "manager1_gw_points": 77,
-      "manager1_total": 1791,
-      "manager2_gw_points": 55,
-      "manager2_total": 1802,
-      "gap": -11
+      "standings": [
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 55,
+          "total_points": 1802
+        },
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 77,
+          "total_points": 1791
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 55,
+          "total_points": 1735
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 53,
+          "total_points": 1658
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 66,
+          "total_points": 1615
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 35,
+          "total_points": 1604
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 51,
+          "total_points": 1589
+        }
+      ],
+      "leader_id": "6839236",
+      "leader_nickname": "Helgi",
+      "second_nickname": "Sindri",
+      "gap": 11
     },
     {
       "gameweek": 33,
-      "manager1_gw_points": 109,
-      "manager1_total": 1900,
-      "manager2_gw_points": 65,
-      "manager2_total": 1867,
+      "standings": [
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 109,
+          "total_points": 1900
+        },
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 65,
+          "total_points": 1867
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 119,
+          "total_points": 1854
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 74,
+          "total_points": 1732
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 95,
+          "total_points": 1710
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 52,
+          "total_points": 1656
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 57,
+          "total_points": 1646
+        }
+      ],
+      "leader_id": "6819004",
+      "leader_nickname": "Sindri",
+      "second_nickname": "Helgi",
+      "gap": 33
+    },
+    {
+      "gameweek": 34,
+      "standings": [
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 9,
+          "total_points": 1909
+        },
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 9,
+          "total_points": 1876
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 13,
+          "total_points": 1867
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 9,
+          "total_points": 1741
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 0,
+          "total_points": 1702
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 0,
+          "total_points": 1656
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 0,
+          "total_points": 1646
+        }
+      ],
+      "leader_id": "6819004",
+      "leader_nickname": "Sindri",
+      "second_nickname": "Helgi",
       "gap": 33
     }
   ],
-  "last_updated": "2026-04-24T09:51:46Z"
+  "last_updated": "2026-04-25T08:49:25Z"
 }
