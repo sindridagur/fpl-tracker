@@ -3,16 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FPL gatið #lokumgatinu</title>
+  <title>FPL League Tracker</title>
   <style>
     :root {
-      --green: #00ff87;
+      --green:  #00ff87;
       --purple: #37003c;
-      --light-purple: #56076e;
       --card-bg: #1e0628;
-      --text: #f0e6f6;
-      --muted: #a07bb5;
-      --red: #ff4d4d;
+      --text:   #f0e6f6;
+      --muted:  #a07bb5;
+      --red:    #ff4d4d;
       --border: rgba(255,255,255,0.08);
     }
 
@@ -23,146 +22,119 @@
       background: var(--purple);
       color: var(--text);
       min-height: 100vh;
-      padding: 24px 16px 48px;
+      padding: 24px 16px 64px;
     }
 
     header {
       text-align: center;
       margin-bottom: 32px;
     }
+    header h1 { font-size: 2rem; font-weight: 800; color: var(--green); }
+    header p  { color: var(--muted); font-size: 0.875rem; margin-top: 4px; }
 
-    header h1 {
-      font-size: 2rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      color: var(--green);
-    }
-
-    header p {
-      color: var(--muted);
-      font-size: 0.875rem;
-      margin-top: 4px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      max-width: 680px;
+    /* ── Section wrapper ── */
+    .section {
+      max-width: 760px;
       margin: 0 auto 32px;
     }
-
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .card .team-name {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--green);
-      margin-bottom: 4px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .card .manager-name {
+    .section h2 {
       font-size: 0.8rem;
+      font-weight: 700;
       color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
       margin-bottom: 12px;
     }
 
-    .card .points {
-      font-size: 2.4rem;
-      font-weight: 800;
-      line-height: 1;
+    /* ── Leaderboard ── */
+    .leaderboard {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
     }
-
-    .card .points-label {
+    .leaderboard-row {
+      display: grid;
+      grid-template-columns: 36px 1fr auto;
+      align-items: center;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      gap: 12px;
+      transition: background 0.15s;
+    }
+    .leaderboard-row:last-child { border-bottom: none; }
+    .leaderboard-row:hover { background: rgba(255,255,255,0.04); }
+    .leaderboard-row.rank-1 { background: rgba(0,255,135,0.06); }
+    .pos {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--muted);
+      text-align: center;
+    }
+    .rank-1 .pos { color: var(--green); }
+    .rank-2 .pos { color: #c0c0c0; }
+    .rank-3 .pos { color: #cd7f32; }
+    .player-info .nickname {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .player-info .team {
       font-size: 0.75rem;
       color: var(--muted);
-      margin-top: 4px;
+    }
+    .points-col {
+      text-align: right;
+    }
+    .points-col .pts {
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
+    .points-col .gw {
+      font-size: 0.7rem;
+      color: var(--muted);
     }
 
-    .gap-banner {
-      max-width: 680px;
-      margin: 0 auto 32px;
+    /* ── Gap banner + GIF ── */
+    .gap-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: center;
+    }
+    .gap-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 16px;
       padding: 20px 24px;
       text-align: center;
+      flex: 1;
     }
+    .gap-label { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+    .gap-value { font-size: 3rem; font-weight: 900; color: var(--green); line-height: 1; }
+    .gap-desc  { font-size: 0.9rem; color: var(--muted); margin-top: 8px; }
 
-    .gap-banner .gap-label {
-      font-size: 0.8rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 6px;
-    }
-
-    .gap-banner .gap-value {
-      font-size: 3rem;
-      font-weight: 900;
-      color: var(--green);
-      line-height: 1;
-    }
-
-    .gap-banner .gap-value.negative {
-      color: var(--red);
-    }
-
-    .gap-banner .gap-desc {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-top: 8px;
-    }
-
-    .reaction {
-      max-width: 680px;
-      margin: 0 auto 32px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
+    .reaction-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 16px 20px;
+      padding: 14px;
+      text-align: center;
+      min-width: 150px;
     }
-
-    .reaction img {
-      width: 120px;
-      height: 90px;
-      object-fit: cover;
-      border-radius: 8px;
-      flex-shrink: 0;
-    }
-
-    .reaction .reaction-caption {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .chart-section {
-      max-width: 680px;
-      margin: 0 auto 32px;
-    }
-
-    .chart-section h2 {
-      font-size: 1rem;
+    .reaction-card .caption {
+      font-size: 0.8rem;
       font-weight: 700;
       color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 16px;
+      margin-bottom: 8px;
+    }
+    .reaction-card img {
+      width: 130px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
     }
 
+    /* ── Chart ── */
     .chart-wrap {
       background: var(--card-bg);
       border: 1px solid var(--border);
@@ -170,25 +142,9 @@
       padding: 20px;
       overflow-x: auto;
     }
+    canvas { width: 100% !important; }
 
-    canvas {
-      width: 100% !important;
-    }
-
-    .table-section {
-      max-width: 680px;
-      margin: 0 auto;
-    }
-
-    .table-section h2 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 16px;
-    }
-
+    /* ── GW leaders table ── */
     table {
       width: 100%;
       border-collapse: collapse;
@@ -196,49 +152,18 @@
       border-radius: 16px;
       overflow: hidden;
       border: 1px solid var(--border);
-      font-size: 0.875rem;
+      font-size: 0.85rem;
     }
+    thead tr { background: rgba(255,255,255,0.06); }
+    th, td { padding: 9px 14px; text-align: center; }
+    th { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); }
+    tbody tr:nth-child(even) { background: rgba(255,255,255,0.025); }
+    tbody tr:hover { background: rgba(255,255,255,0.06); }
+    td.leader-cell { font-weight: 700; color: var(--green); }
+    td.gap-cell    { font-weight: 700; color: var(--green); }
 
-    thead tr {
-      background: var(--light-purple);
-    }
-
-    th, td {
-      padding: 10px 14px;
-      text-align: center;
-    }
-
-    th {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--muted);
-    }
-
-    tbody tr:nth-child(even) {
-      background: rgba(255,255,255,0.03);
-    }
-
-    tbody tr:hover {
-      background: rgba(255,255,255,0.06);
-    }
-
-    td.gap-positive { color: var(--green); font-weight: 700; }
-    td.gap-negative { color: var(--red); font-weight: 700; }
-    td.gap-zero { color: var(--muted); }
-
-    .loading {
-      text-align: center;
-      padding: 60px 20px;
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    .error {
-      text-align: center;
-      padding: 60px 20px;
-      color: var(--red);
-    }
+    .loading { text-align: center; padding: 60px 20px; color: var(--muted); }
+    .error   { text-align: center; padding: 60px 20px; color: var(--red); }
 
     footer {
       text-align: center;
@@ -246,198 +171,215 @@
       font-size: 0.75rem;
       color: var(--muted);
     }
+
+    /* Player dot legend */
+    .dot {
+      display: inline-block;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      margin-right: 6px;
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>⚽ FPL gatið #lokumgatinu</h1>
+  <h1>⚽ FPL League Tracker</h1>
   <p id="last-updated">Loading…</p>
 </header>
 
-<div id="app">
-  <div class="loading">Loading FPL data…</div>
-</div>
+<div id="app"><div class="loading">Fetching league data…</div></div>
 
-<footer>
-  Data auto-updates daily via GitHub Actions · Fantasy Premier League
-</footer>
+<footer>Auto-updates daily · Fantasy Premier League 2024/25</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script>
-  const DATA_URL = 'data/fpl_data.json';
+// ── Player GIFs ──────────────────────────────────────────────────────────────
+const PLAYER_GIFS = {
+  'Sindri': { url: 'https://media.giphy.com/media/119pLwyWg8ScTK/giphy.gif',        caption: 'Sindri rn:' },
+  'Helgi':  { url: 'https://media.giphy.com/media/l41YvHPauy1qW8uha/giphy.gif',     caption: 'Helgi rn:' },
+  'Emmi':   { url: 'https://media.giphy.com/media/12syWGyJ92R8u4/giphy.gif',         caption: 'Emmi rn:' },
+  'Olli':   { url: 'https://media.giphy.com/media/qdxDab2ZKCLq3qI6kO/giphy.gif',    caption: 'Olli rn:' },
+  'Högni':  { url: 'https://media.giphy.com/media/XGyIdTG6Pa3F0XBpMY/giphy.gif',    caption: 'Högni rn:' },
+  'Tommi':  { url: 'https://media.giphy.com/media/a6tiTACLV4JUuN6p7Q/giphy.gif',    caption: 'Tommi rn:' },
+  'Maggi':  { url: 'https://media.giphy.com/media/JpLa1IDcoLK2gtzwho/giphy.gif',    caption: 'Maggi rn:' },
+};
 
-  async function loadData() {
-    const res = await fetch(DATA_URL + '?t=' + Date.now());
-    if (!res.ok) throw new Error('Failed to load fpl_data.json');
-    return res.json();
-  }
+// ── Player colours ────────────────────────────────────────────────────────────
+const PLAYER_COLORS = {
+  'Sindri': '#00ff87',
+  'Helgi':  '#ff7eb6',
+  'Emmi':   '#ffe082',
+  'Olli':   '#82d9ff',
+  'Högni':  '#ff4d4d',
+  'Tommi':  '#c7b3ff',
+  'Maggi':  '#ff9f43',
+};
 
-  function formatDate(iso) {
-    const d = new Date(iso);
-    return d.toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' });
-  }
+const DATA_URL = 'data/fpl_data.json';
 
-  function render(data) {
-    const { manager1: m1, manager2: m2, gameweeks, last_updated } = data;
+async function loadData() {
+  const res = await fetch(DATA_URL + '?t=' + Date.now());
+  if (!res.ok) throw new Error('Failed to load fpl_data.json');
+  return res.json();
+}
 
-    document.getElementById('last-updated').textContent =
-      last_updated ? 'Last updated: ' + formatDate(last_updated) : '';
+function formatDate(iso) {
+  return new Date(iso).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' });
+}
 
-    const latest = gameweeks[gameweeks.length - 1] || {};
-    const m1Total = latest.manager1_total ?? 0;
-    const m2Total = latest.manager2_total ?? 0;
-    const gap = latest.gap ?? 0;
-    const absGap = Math.abs(gap);
-    const leader = gap > 0 ? m1.team_name : gap < 0 ? m2.team_name : null;
+function render(data) {
+  const { managers, gameweeks, last_updated } = data;
 
-    const gapClass = gap > 0 ? '' : gap < 0 ? 'negative' : '';
-    const gapDesc = leader
-      ? `${leader} leads by ${absGap} point${absGap !== 1 ? 's' : ''}`
-      : 'All square!';
+  document.getElementById('last-updated').textContent =
+    last_updated ? 'Last updated: ' + formatDate(last_updated) : '';
 
-    // Reaction GIF logic
-    const prevGap = gameweeks.length >= 2 ? gameweeks[gameweeks.length - 2].gap : null;
-    let gifUrl = null;
-    let gifCaption = null;
-    if (gap > 0) {
-      gifUrl = 'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnN3N2Fhbmc1NG83d29sbGN2enVwOTBmeGt6OTVidmxyenhrZjI0bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8Q31McooUHTNu/giphy.gif';
-      gifCaption = 'Sindri rn:';
-    } else if (gap < 0) {
-      const shrinking = prevGap !== null && Math.abs(gap) < Math.abs(prevGap);
-      if (shrinking) {
-        gifUrl = 'https://media1.tenor.com/m/HR3YZjYlr_UAAAAC/nervous-sweating-sweating-bullets.gif';
-        gifCaption = 'Bilið að minnka, Helgi rn:';
-      } else {
-        gifUrl = 'https://i.pinimg.com/originals/c6/f5/ea/c6f5eaf6ace90cd436485272551ed2eb.gif';
-        gifCaption = 'Bilið að aukast, sindri rn:';
+  // Latest GW standings
+  const latestGW  = gameweeks[gameweeks.length - 1] || {};
+  const standings = latestGW.standings || managers.map(m => ({ ...m, gw_points: 0 }));
+  const leader    = latestGW.leader_nickname || (standings[0] && standings[0].nickname) || '';
+  const second    = latestGW.second_nickname || (standings[1] && standings[1].nickname) || '';
+  const gap       = latestGW.gap ?? 0;
+
+  // Latest GW scores lookup
+  const gwScores = {};
+  (latestGW.standings || []).forEach(s => { gwScores[s.nickname] = s.gw_points; });
+
+  // GIF for leader
+  const gif = PLAYER_GIFS[leader] || null;
+
+  // ── Leaderboard HTML ──
+  const leaderboardRows = standings.map((p, i) => {
+    const color = PLAYER_COLORS[p.nickname] || '#fff';
+    const rankClass = i === 0 ? 'rank-1' : i === 1 ? 'rank-2' : i === 2 ? 'rank-3' : '';
+    const gwPts = gwScores[p.nickname] !== undefined ? gwScores[p.nickname] : (p.gw_points || '-');
+    return `
+      <div class="leaderboard-row ${rankClass}">
+        <div class="pos">${i === 0 ? '🏆' : i + 1}</div>
+        <div class="player-info">
+          <div class="nickname">
+            <span class="dot" style="background:${color}"></span>${p.nickname}
+          </div>
+          <div class="team">${p.team_name}</div>
+        </div>
+        <div class="points-col">
+          <div class="pts">${(p.total_points || 0).toLocaleString()}</div>
+          <div class="gw">GW: ${gwPts}</div>
+        </div>
+      </div>`;
+  }).join('');
+
+  // ── GIF panel ──
+  const gifPanel = gif ? `
+    <div class="reaction-card">
+      <div class="caption">${gif.caption}</div>
+      <img src="${gif.url}" alt="${leader} reaction gif" />
+    </div>` : '';
+
+  // ── GW leaders table ──
+  const tableRows = [...gameweeks].reverse().map(gw => `
+    <tr>
+      <td>GW${gw.gameweek}</td>
+      <td class="leader-cell">${gw.leader_nickname || '-'}</td>
+      <td>${gw.second_nickname || '-'}</td>
+      <td class="gap-cell">+${gw.gap}</td>
+    </tr>`).join('');
+
+  document.getElementById('app').innerHTML = `
+    <div class="section">
+      <h2>Standings</h2>
+      <div class="leaderboard">${leaderboardRows}</div>
+    </div>
+
+    <div class="section">
+      <h2>Gap Between #1 &amp; #2</h2>
+      <div class="gap-row">
+        <div class="gap-card">
+          <div class="gap-label">Current gap</div>
+          <div class="gap-value">${gap}</div>
+          <div class="gap-desc">${leader} leads ${second} by ${gap} point${gap !== 1 ? 's' : ''}</div>
+        </div>
+        ${gifPanel}
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Points Over the Season</h2>
+      <div class="chart-wrap">
+        <canvas id="lineChart" height="260"></canvas>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>GW Leaders</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>GW</th>
+            <th>#1</th>
+            <th>#2</th>
+            <th>Gap</th>
+          </tr>
+        </thead>
+        <tbody>${tableRows}</tbody>
+      </table>
+    </div>
+  `;
+
+  // ── Line Chart ──
+  const nicknames = managers.map(m => m.nickname);
+  const labels    = gameweeks.map(gw => 'GW' + gw.gameweek);
+
+  const datasets = nicknames.map(name => {
+    const color = PLAYER_COLORS[name] || '#fff';
+    const pts   = gameweeks.map(gw => {
+      const entry = (gw.standings || []).find(s => s.nickname === name);
+      return entry ? entry.total_points : null;
+    });
+    return {
+      label: name,
+      data: pts,
+      borderColor: color,
+      backgroundColor: color + '22',
+      borderWidth: 2.5,
+      pointRadius: 3,
+      tension: 0.3,
+      fill: false,
+    };
+  });
+
+  new Chart(document.getElementById('lineChart'), {
+    type: 'line',
+    data: { labels, datasets },
+    options: {
+      responsive: true,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: {
+          labels: { color: '#a07bb5', boxWidth: 12, font: { size: 11 } }
+        },
+      },
+      scales: {
+        x: { ticks: { color: '#a07bb5', font: { size: 11 } }, grid: { color: 'rgba(255,255,255,0.05)' } },
+        y: { ticks: { color: '#a07bb5' }, grid: { color: 'rgba(255,255,255,0.05)' } },
       }
     }
+  });
+}
 
+loadData()
+  .then(render)
+  .catch(err => {
     document.getElementById('app').innerHTML = `
-      <div class="cards">
-        <div class="card">
-          <div class="team-name">${m1.team_name}</div>
-          <div class="manager-name">${m1.name}</div>
-          <div class="points">${m1Total.toLocaleString()}</div>
-          <div class="points-label">Total Points</div>
-        </div>
-        <div class="card">
-          <div class="team-name">${m2.team_name}</div>
-          <div class="manager-name">${m2.name}</div>
-          <div class="points">${m2Total.toLocaleString()}</div>
-          <div class="points-label">Total Points</div>
-        </div>
-      </div>
-
-      <div class="gap-banner">
-        <div class="gap-label">Current Gap</div>
-        <div class="gap-value ${gapClass}">${gap > 0 ? '+' : ''}${gap}</div>
-        <div class="gap-desc">${gapDesc}</div>
-      </div>
-
-      ${gifUrl ? `
-      <div class="reaction">
-        <img src="${gifUrl}" alt="reaction gif" />
-        <div class="reaction-caption">${gifCaption}</div>
-      </div>` : ''}
-
-      <div class="chart-section">
-        <h2>Gap Over the Season</h2>
-        <div class="chart-wrap">
-          <canvas id="gapChart" height="220"></canvas>
-        </div>
-      </div>
-
-      <div class="table-section">
-        <h2>Gameweek Breakdown</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>GW</th>
-              <th>${m1.team_name}</th>
-              <th>${m2.team_name}</th>
-              <th>${m1.team_name} Total</th>
-              <th>${m2.team_name} Total</th>
-              <th>Gap</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${[...gameweeks].reverse().map(gw => {
-              const g = gw.gap;
-              const cls = g > 0 ? 'gap-positive' : g < 0 ? 'gap-negative' : 'gap-zero';
-              return `<tr>
-                <td>GW${gw.gameweek}</td>
-                <td>${gw.manager1_gw_points}</td>
-                <td>${gw.manager2_gw_points}</td>
-                <td>${gw.manager1_total}</td>
-                <td>${gw.manager2_total}</td>
-                <td class="${cls}">${g > 0 ? '+' : ''}${g}</td>
-              </tr>`;
-            }).join('')}
-          </tbody>
-        </table>
-      </div>
-    `;
-
-    // Draw chart
-    const labels = gameweeks.map(gw => 'GW' + gw.gameweek);
-    const gaps = gameweeks.map(gw => gw.gap);
-    const colors = gaps.map(g => g >= 0 ? 'rgba(0,255,135,0.8)' : 'rgba(255,77,77,0.8)');
-
-    new Chart(document.getElementById('gapChart'), {
-      type: 'bar',
-      data: {
-        labels,
-        datasets: [{
-          label: 'Gap (M1 − M2)',
-          data: gaps,
-          backgroundColor: colors,
-          borderRadius: 4,
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: { display: false },
-          tooltip: {
-            callbacks: {
-              label: ctx => {
-                const v = ctx.parsed.y;
-                return v >= 0
-                  ? `${m1.team_name} leads by ${v}`
-                  : `${m2.team_name} leads by ${Math.abs(v)}`;
-              }
-            }
-          }
-        },
-        scales: {
-          x: {
-            ticks: { color: '#a07bb5', font: { size: 11 } },
-            grid: { color: 'rgba(255,255,255,0.05)' },
-          },
-          y: {
-            ticks: { color: '#a07bb5' },
-            grid: { color: 'rgba(255,255,255,0.05)' },
-          }
-        }
-      }
-    });
-  }
-
-  loadData()
-    .then(render)
-    .catch(err => {
-      document.getElementById('app').innerHTML =
-        `<div class="error">
-          <p>⚠️ Could not load FPL data.</p>
-          <p style="font-size:0.8rem;margin-top:8px;color:#a07bb5">${err.message}</p>
-          <p style="font-size:0.8rem;margin-top:4px;color:#a07bb5">
-            Run the GitHub Actions workflow to generate data/fpl_data.json
-          </p>
-        </div>`;
-      document.getElementById('last-updated').textContent = '';
-    });
+      <div class="error">
+        <p>⚠️ Could not load FPL data.</p>
+        <p style="font-size:0.8rem;margin-top:8px;color:#a07bb5">${err.message}</p>
+        <p style="font-size:0.8rem;margin-top:4px;color:#a07bb5">
+          Run the GitHub Actions workflow to generate data/fpl_data.json
+        </p>
+      </div>`;
+    document.getElementById('last-updated').textContent = '';
+  });
 </script>
 </body>
 </html>
