@@ -8,12 +8,13 @@ MANAGERS = [
     {"id": "6839236",  "nickname": "Helgi"},
     {"id": "4470214",  "nickname": "Emmi"},
     {"id": "6590777",  "nickname": "Olli"},
-    {"id": "9072831",  "nickname": "Hogni"},
+    {"id": "9072831",  "nickname": "Högni"},
     {"id": "8305956",  "nickname": "Tommi"},
     {"id": "10576515", "nickname": "Maggi"},
 ]
 
 BASE = "https://fantasy.premierleague.com/api"
+HEADERS = [("User-Agent", "Mozilla/5.0")]
 
 
 def fetch(url):
@@ -28,13 +29,14 @@ def main():
 
     for m in MANAGERS:
         mid = m["id"]
-        print(f"Fetching {m['nickname']} (id={mid})...")
+        print(f"Fetching {m['nickname']} (id={mid})…")
         info = fetch(f"{BASE}/entry/{mid}/")
         history = fetch(f"{BASE}/entry/{mid}/history/")
 
         gws = {gw["event"]: gw for gw in history["current"]}
 
         # Baseline = everything before GW2 (league started GW2)
+        # More reliable than reading GW1 directly (phantom entries exist for late registrations)
         gw2 = gws.get(2, {})
         baseline = gw2.get("total_points", 0) - gw2.get("points", 0)
 
@@ -49,6 +51,7 @@ def main():
         })
         time.sleep(0.5)
 
+    # All GWs played (GW2+)
     all_gw_nums = sorted(set(
         gw for m in manager_data for gw in m["gws"] if gw > 1
     ))
@@ -84,6 +87,7 @@ def main():
             "gap": gap,
         })
 
+    # Current overall standings (from API summary)
     current_standings = sorted(
         [
             {
@@ -109,8 +113,7 @@ def main():
     with open("data/fpl_data.json", "w") as f:
         json.dump(output, f, indent=2)
 
-    print("
- Done! Current standings:")
+    print("\n✅ Done! Current standings:")
     for i, m in enumerate(current_standings, 1):
         print(f"  {i}. {m['nickname']} ({m['team_name']}): {m['total_points']} pts")
 
