@@ -1,98 +1,119 @@
-import requests
 import json
 import os
-from datetime import datetime
+import time
+from urllib.request import urlopen
 
-MANAGER_1_ID = os.environ.get("MANAGER_1_ID", "6819004")
-MANAGER_2_ID = os.environ.get("MANAGER_2_ID", "6839236")
+MANAGERS = [
+    {"id": "6819004",  "nickname": "Sindri"},
+    {"id": "6839236",  "nickname": "Helgi"},
+    {"id": "4470214",  "nickname": "Emmi"},
+    {"id": "6590777",  "nickname": "Olli"},
+    {"id": "9072831",  "nickname": "Hogni"},
+    {"id": "8305956",  "nickname": "Tommi"},
+    {"id": "10576515", "nickname": "Maggi"},
+]
 
-HEADERS = {
-    "User-Agent": "Mozilla/5.0"
-}
+BASE = "https://fantasy.premierleague.com/api"
 
-def fetch_manager_info(manager_id):
-    url = f"https://fantasy.premierleague.com/api/entry/{manager_id}/"
-    response = requests.get(url, headers=HEADERS)
-    response.raise_for_status()
-    return response.json()
 
-def fetch_manager_history(manager_id):
-    url = f"https://fantasy.premierleague.com/api/entry/{manager_id}/history/"
-    response = requests.get(url, headers=HEADERS)
-    response.raise_for_status()
-    return response.json()
+def fetch(url):
+    import urllib.request
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    with urllib.request.urlopen(req) as r:
+        return json.loads(r.read())
+
 
 def main():
-    print(f"Fetching data for Manager 1 (ID: {MANAGER_1_ID})...")
-    m1_info = fetch_manager_info(MANAGER_1_ID)
-    m1_history = fetch_manager_history(MANAGER_1_ID)
+    manager_data = []
 
-    print(f"Fetching data for Manager 2 (ID: {MANAGER_2_ID})...")
-    m2_info = fetch_manager_info(MANAGER_2_ID)
-    m2_history = fetch_manager_history(MANAGER_2_ID)
+    for m in MANAGERS:
+        mid = m["id"]
+        print(f"Fetching {m['nickname']} (id={mid})...")
+        info = fetch(f"{BASE}/entry/{mid}/")
+        history = fetch(f"{BASE}/entry/{mid}/history/")
 
-    m1_gws = {gw["event"]: gw for gw in m1_history["current"]}
-    m2_gws = {gw["event"]: gw for gw in m2_history["current"]}
+        gws = {gw["event"]: gw for gw in history["current"]}
 
-    # League started at GW2. Compute the pre-league baseline by looking at what
-    # was already in each manager's cumulative total before GW2 began.
-    # baseline = GW2 total_points - GW2 points  (i.e. everything before GW2)
-    # This is more reliable than reading GW1 directly, as some managers have
-    # a phantom GW1 entry (e.g. 4 pts from auto-pick / late registration).
-    m1_gw2 = m1_gws.get(2, {})
-    m2_gw2 = m2_gws.get(2, {})
-    m1_baseline = m1_gw2.get("total_points", 0) - m1_gw2.get("points", 0)
-    m2_baseline = m2_gw2.get("total_points", 0) - m2_gw2.get("points", 0)
+        # Baseline = everything before GW2 (league started GW2)
+        gw2 = gws.get(2, {})
+        baseline = gw2.get("total_points", 0) - gw2.get("points", 0)
 
-    all_gws = sorted(gw for gw in set(list(m1_gws.keys()) + list(m2_gws.keys())) if gw > 1)
+        manager_data.append({
+            "id": mid,
+            "nickname": m["nickname"],
+            "team_name": info.get("name", "Unknown"),
+            "player_name": f"{info.get('player_first_name', '')} {info.get('player_last_name', '')}".strip(),
+            "summary_total": (info.get("summary_overall_points") or 0) - baseline,
+            "gws": gws,
+            "baseline": baseline,
+        })
+        time.sleep(0.5)
+
+    all_gw_nums = sorted(set(
+        gw for m in manager_data for gw in m["gws"] if gw > 1
+    ))
 
     gameweeks = []
-    for gw in all_gws:
-        m1_data = m1_gws.get(gw, {})
-        m2_data = m2_gws.get(gw, {})
+    for gw_num in all_gw_nums:
+        standings = []
+        for m in manager_data:
+            gw_data = m["gws"].get(gw_num, {})
+            total = gw_data.get("total_points", 0) - m["baseline"]
+            standings.append({
+                "id": m["id"],
+                "nickname": m["nickname"],
+                "team_name": m["team_name"],
+                "gw_points": gw_data.get("points", 0),
+                "total_points": total,
+            })
 
-        m1_total = m1_data.get("total_points", 0) - m1_baseline
-        m2_total = m2_data.get("total_points", 0) - m2_baseline
+        standings.sort(key=lambda x: x["total_points"], reverse=True)
+
+        gap = (
+            standings[0]["total_points"] - standings[1]["total_points"]
+            if len(standings) >= 2
+            else 0
+        )
 
         gameweeks.append({
-            "gameweek": gw,
-            "manager1_gw_points": m1_data.get("points", 0),
-            "manager1_total": m1_total,
-            "manager2_gw_points": m2_data.get("points", 0),
-            "manager2_total": m2_total,
-            "gap": m1_total - m2_total,
+            "gameweek": gw_num,
+            "standings": standings,
+            "leader_id": standings[0]["id"] if standings else None,
+            "leader_nickname": standings[0]["nickname"] if standings else None,
+            "second_nickname": standings[1]["nickname"] if len(standings) >= 2 else None,
+            "gap": gap,
         })
 
+    current_standings = sorted(
+        [
+            {
+                "id": m["id"],
+                "nickname": m["nickname"],
+                "team_name": m["team_name"],
+                "player_name": m["player_name"],
+                "total_points": m["summary_total"],
+            }
+            for m in manager_data
+        ],
+        key=lambda x: x["total_points"],
+        reverse=True,
+    )
+
     output = {
-        "manager1": {
-            "id": MANAGER_1_ID,
-            "name": f"{m1_info.get('player_first_name', '')} {m1_info.get('player_last_name', '')}".strip(),
-            "team_name": m1_info.get("name", "Manager 1"),
-            "overall_rank": m1_info.get("summary_overall_rank"),
-            "total_points": (m1_info.get("summary_overall_points") or 0) - m1_baseline,
-        },
-        "manager2": {
-            "id": MANAGER_2_ID,
-            "name": f"{m2_info.get('player_first_name', '')} {m2_info.get('player_last_name', '')}".strip(),
-            "team_name": m2_info.get("name", "Manager 2"),
-            "overall_rank": m2_info.get("summary_overall_rank"),
-            "total_points": (m2_info.get("summary_overall_points") or 0) - m2_baseline,
-        },
+        "managers": current_standings,
         "gameweeks": gameweeks,
-        "last_updated": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "last_updated": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
     }
 
     os.makedirs("data", exist_ok=True)
     with open("data/fpl_data.json", "w") as f:
         json.dump(output, f, indent=2)
 
-    print("â Data saved to data/fpl_data.json")
+    print("
+ Done! Current standings:")
+    for i, m in enumerate(current_standings, 1):
+        print(f"  {i}. {m['nickname']} ({m['team_name']}): {m['total_points']} pts")
 
-    if gameweeks:
-        latest = gameweeks[-1]
-        gap = latest["gap"]
-        leader = output["manager1"]["team_name"] if gap > 0 else output["manager2"]["team_name"]
-        print(f"   GW{latest['gameweek']} gap: {abs(gap)} pts â {leader} leads")
 
 if __name__ == "__main__":
     main()
