@@ -5,14 +5,14 @@
       "nickname": "Sindri",
       "team_name": "zipzap",
       "player_name": "Sindri Sindrason",
-      "total_points": 1954
+      "total_points": 1959
     },
     {
       "id": "4470214",
       "nickname": "Emmi",
       "team_name": "The Flying Dutchman",
       "player_name": "ElmarA Arnarsson",
-      "total_points": 1920
+      "total_points": 1928
     },
     {
       "id": "6839236",
@@ -40,14 +40,14 @@
       "nickname": "Maggi",
       "team_name": "Maggi Snorra",
       "player_name": "Sigur\u00fe\u00f3r Maggi Snorrason",
-      "total_points": 1701
+      "total_points": 1697
     },
     {
       "id": "8305956",
       "nickname": "Tommi",
       "team_name": "Lebaach",
       "player_name": "T\u00f3mas \u00d6rn\u00f3lfsson",
-      "total_points": 1682
+      "total_points": 1684
     }
   ],
   "gameweeks": [
@@ -1964,7 +1964,65 @@
       "leader_nickname": "Sindri",
       "second_nickname": "Emmi",
       "gap": 34
+    },
+    {
+      "gameweek": 35,
+      "standings": [
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 5,
+          "total_points": 1959
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 8,
+          "total_points": 1928
+        },
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 0,
+          "total_points": 1912
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 0,
+          "total_points": 1790
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 0,
+          "total_points": 1735
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 0,
+          "total_points": 1697
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 2,
+          "total_points": 1684
+        }
+      ],
+      "leader_id": "6819004",
+      "leader_nickname": "Sindri",
+      "second_nickname": "Emmi",
+      "gap": 31
     }
   ],
-  "last_updated": "2026-05-01T09:54:09Z"
+  "last_updated": "2026-05-02T09:14:57Z"
 }
