@@ -12,7 +12,7 @@
       "nickname": "Emmi",
       "team_name": "The Flying Dutchman",
       "player_name": "ElmarA Arnarsson",
-      "total_points": 2047
+      "total_points": 2054
     },
     {
       "id": "6839236",
@@ -26,7 +26,7 @@
       "nickname": "Olli",
       "team_name": "Ahlelele Ahlelah FC",
       "player_name": "Olaf Rusak",
-      "total_points": 1930
+      "total_points": 1929
     },
     {
       "id": "9072831",
@@ -40,14 +40,14 @@
       "nickname": "Tommi",
       "team_name": "Lebaach",
       "player_name": "T\u00f3mas \u00d6rn\u00f3lfsson",
-      "total_points": 1817
+      "total_points": 1824
     },
     {
       "id": "10576515",
       "nickname": "Maggi",
       "team_name": "Maggi Snorra",
       "player_name": "Sigur\u00fe\u00f3r Maggi Snorrason",
-      "total_points": 1814
+      "total_points": 1813
     }
   ],
   "gameweeks": [
@@ -2037,8 +2037,8 @@
           "id": "4470214",
           "nickname": "Emmi",
           "team_name": "The Flying Dutchman",
-          "gw_points": 72,
-          "total_points": 2047
+          "gw_points": 79,
+          "total_points": 2054
         },
         {
           "id": "6839236",
@@ -2051,8 +2051,8 @@
           "id": "6590777",
           "nickname": "Olli",
           "team_name": "Ahlelele Ahlelah FC",
-          "gw_points": 84,
-          "total_points": 1930
+          "gw_points": 83,
+          "total_points": 1929
         },
         {
           "id": "9072831",
@@ -2065,22 +2065,22 @@
           "id": "8305956",
           "nickname": "Tommi",
           "team_name": "Lebaach",
-          "gw_points": 72,
-          "total_points": 1817
+          "gw_points": 79,
+          "total_points": 1824
         },
         {
           "id": "10576515",
           "nickname": "Maggi",
           "team_name": "Maggi Snorra",
-          "gw_points": 60,
-          "total_points": 1814
+          "gw_points": 59,
+          "total_points": 1813
         }
       ],
       "leader_id": "6819004",
       "leader_nickname": "Sindri",
       "second_nickname": "Emmi",
-      "gap": 45
+      "gap": 38
     }
   ],
-  "last_updated": "2026-05-11T11:32:16Z"
+  "last_updated": "2026-05-12T10:39:39Z"
 }
