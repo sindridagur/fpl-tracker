@@ -5,7 +5,7 @@
       "nickname": "Sindri",
       "team_name": "zipzap",
       "player_name": "Sindri Sindrason",
-      "total_points": 2101
+      "total_points": 2113
     },
     {
       "id": "6839236",
@@ -26,7 +26,7 @@
       "nickname": "Olli",
       "team_name": "Ahlelele Ahlelah FC",
       "player_name": "Olaf Rusak",
-      "total_points": 1935
+      "total_points": 1950
     },
     {
       "id": "9072831",
@@ -2080,7 +2080,65 @@
       "leader_nickname": "Sindri",
       "second_nickname": "Helgi",
       "gap": 36
+    },
+    {
+      "gameweek": 37,
+      "standings": [
+        {
+          "id": "6819004",
+          "nickname": "Sindri",
+          "team_name": "zipzap",
+          "gw_points": 12,
+          "total_points": 2113
+        },
+        {
+          "id": "6839236",
+          "nickname": "Helgi",
+          "team_name": "Boltagooners FC",
+          "gw_points": 0,
+          "total_points": 2065
+        },
+        {
+          "id": "4470214",
+          "nickname": "Emmi",
+          "team_name": "The Flying Dutchman",
+          "gw_points": 0,
+          "total_points": 2063
+        },
+        {
+          "id": "6590777",
+          "nickname": "Olli",
+          "team_name": "Ahlelele Ahlelah FC",
+          "gw_points": 15,
+          "total_points": 1950
+        },
+        {
+          "id": "9072831",
+          "nickname": "H\u00f6gni",
+          "team_name": "Benzinrotta",
+          "gw_points": 0,
+          "total_points": 1854
+        },
+        {
+          "id": "8305956",
+          "nickname": "Tommi",
+          "team_name": "Lebaach",
+          "gw_points": 0,
+          "total_points": 1833
+        },
+        {
+          "id": "10576515",
+          "nickname": "Maggi",
+          "team_name": "Maggi Snorra",
+          "gw_points": 0,
+          "total_points": 1818
+        }
+      ],
+      "leader_id": "6819004",
+      "leader_nickname": "Sindri",
+      "second_nickname": "Helgi",
+      "gap": 48
     }
   ],
-  "last_updated": "2026-05-15T10:33:56Z"
+  "last_updated": "2026-05-16T09:47:36Z"
 }
