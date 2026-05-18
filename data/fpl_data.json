@@ -5,49 +5,49 @@
       "nickname": "Sindri",
       "team_name": "zipzap",
       "player_name": "Sindri Sindrason",
-      "total_points": 2113
+      "total_points": 2152
     },
     {
       "id": "6839236",
       "nickname": "Helgi",
       "team_name": "Boltagooners FC",
       "player_name": "Helgi Hrafn Bergmann",
-      "total_points": 2065
+      "total_points": 2093
     },
     {
       "id": "4470214",
       "nickname": "Emmi",
       "team_name": "The Flying Dutchman",
       "player_name": "ElmarA Arnarsson",
-      "total_points": 2063
+      "total_points": 2092
     },
     {
       "id": "6590777",
       "nickname": "Olli",
       "team_name": "Ahlelele Ahlelah FC",
       "player_name": "Olaf Rusak",
-      "total_points": 1950
+      "total_points": 1965
     },
     {
       "id": "9072831",
       "nickname": "H\u00f6gni",
       "team_name": "Benzinrotta",
       "player_name": "Hogni Hognason",
-      "total_points": 1854
+      "total_points": 1889
     },
     {
       "id": "8305956",
       "nickname": "Tommi",
       "team_name": "Lebaach",
       "player_name": "T\u00f3mas \u00d6rn\u00f3lfsson",
-      "total_points": 1833
+      "total_points": 1858
     },
     {
       "id": "10576515",
       "nickname": "Maggi",
       "team_name": "Maggi Snorra",
       "player_name": "Sigur\u00fe\u00f3r Maggi Snorrason",
-      "total_points": 1818
+      "total_points": 1839
     }
   ],
   "gameweeks": [
@@ -2088,57 +2088,57 @@
           "id": "6819004",
           "nickname": "Sindri",
           "team_name": "zipzap",
-          "gw_points": 12,
-          "total_points": 2113
+          "gw_points": 51,
+          "total_points": 2152
         },
         {
           "id": "6839236",
           "nickname": "Helgi",
           "team_name": "Boltagooners FC",
-          "gw_points": 0,
-          "total_points": 2065
+          "gw_points": 28,
+          "total_points": 2093
         },
         {
           "id": "4470214",
           "nickname": "Emmi",
           "team_name": "The Flying Dutchman",
-          "gw_points": 0,
-          "total_points": 2063
+          "gw_points": 29,
+          "total_points": 2092
         },
         {
           "id": "6590777",
           "nickname": "Olli",
           "team_name": "Ahlelele Ahlelah FC",
-          "gw_points": 15,
-          "total_points": 1950
+          "gw_points": 30,
+          "total_points": 1965
         },
         {
           "id": "9072831",
           "nickname": "H\u00f6gni",
           "team_name": "Benzinrotta",
-          "gw_points": 0,
-          "total_points": 1854
+          "gw_points": 35,
+          "total_points": 1889
         },
         {
           "id": "8305956",
           "nickname": "Tommi",
           "team_name": "Lebaach",
-          "gw_points": 0,
-          "total_points": 1833
+          "gw_points": 25,
+          "total_points": 1858
         },
         {
           "id": "10576515",
           "nickname": "Maggi",
           "team_name": "Maggi Snorra",
-          "gw_points": 0,
-          "total_points": 1818
+          "gw_points": 21,
+          "total_points": 1839
         }
       ],
       "leader_id": "6819004",
       "leader_nickname": "Sindri",
       "second_nickname": "Helgi",
-      "gap": 48
+      "gap": 59
     }
   ],
-  "last_updated": "2026-05-17T09:55:00Z"
+  "last_updated": "2026-05-18T11:51:06Z"
 }
